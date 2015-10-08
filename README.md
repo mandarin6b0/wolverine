@@ -1,3 +1,8 @@
+## Fork changes
+
+use wolverine without Rails.root, provide `Wolverine.config.script_path` as `Pathname.new('/wolverine/scripts')`
+
+
 # Wolverine [![Dependency Status](https://gemnasium.com/Shopify/wolverine.png)](https://gemnasium.com/Shopify/wolverine)
 
 Wolverine is a simple library to allow you to manage and run redis server-side lua scripts from a rails app, or other ruby code.
