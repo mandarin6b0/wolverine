@@ -10,9 +10,9 @@ class Wolverine
     # fire with the runtime of each script. This can be useful for analyzing
     # scripts to make sure they aren't running for an unreasonable amount of
     # time.
-    # 
-    # The proc will receive three parameters: 
-    # 
+    #
+    # The proc will receive three parameters:
+    #
     # * +script_name+: A unique identifier for the script, based on its
     #   location in the file system
     # * +runtime+: A float, the total execution time of the script
@@ -26,7 +26,7 @@ class Wolverine
 
     # @return [Pathname] the path wolverine will check for scripts
     def script_path
-      super || @script_path ||= Rails.root + 'app/wolverine'
+      super || @script_path ||= (defined? Rails ? (Rails.root + 'app/wolverine') : raise 'provide script_path')
     end
   end
 end
