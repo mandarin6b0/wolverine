@@ -26,7 +26,7 @@ class Wolverine
 
     # @return [Pathname] the path wolverine will check for scripts
     def script_path
-      super || @script_path ||= (defined? Rails ? (Rails.root + 'app/wolverine') : raise('provide script_path'))
+      super || @script_path ||= (defined?(Rails) ? (Rails.root + 'app/wolverine') : (raise 'provide script_path'))
     end
   end
 end
